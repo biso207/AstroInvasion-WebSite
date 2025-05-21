@@ -42,7 +42,7 @@ body::-webkit-scrollbar {
     background-image: url('../assets/img/bgsTitle/bgTitle1.jpg'); /* deve essere .jpg */
     background-size: cover;
     background-position: center;
-    height: 95vh;
+    height: 92vh;
     position: relative;
     color: white;
     display: flex;
@@ -81,3 +81,142 @@ body::-webkit-scrollbar {
 }
 
 /* MAIN */
+.main {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: inter-bold, sans-serif;
+}
+
+.text-dark {
+    color: #ffffff; /* bianco o colore principale */
+    font-weight: bold;
+}
+
+.text-light {
+    color: #bbbbbb; /* grigio chiaro */
+    font-weight: normal;
+}
+
+.gameInfo {
+    font-family: inter-medium, "sans-serif";
+    width: 100%;
+    max-width: 700px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* spazio tra immagine e testo */
+    margin-bottom: 16px;
+}
+
+.feature-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2)); /* opzionale */
+}
+
+.feature-text {
+    color: #ccc;
+    font-size: 3vh;
+    margin: 10px;
+    font-family: inter-medium, sans-serif;
+    line-height: 1.5;
+    display: inline; /* importante per evitare spazi tra gli span */
+}
+
+/* design sezione di download del gioco */
+.download-section {
+    /* img */
+    background-color: rgba(48, 58, 121, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* supporto per Safari */
+
+    opacity: 0.8;
+    margin-top: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+
+    /* position & alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 80px;
+
+    /* dim */
+    width: 700px;
+    height: 250px;
+    border-radius: 30px;
+}
+
+/* testo del download */
+.download-section h1 {
+    font-family: inter-bold, sans-serif;
+    font-size: 6vh;
+    padding: 20px 0;
+    color: white;
+}
+
+/* pulsante download */
+.download-section button {
+    font-family: inter-medium, sans-serif;
+    background: #151A3B;
+    color: white;
+    padding: 15px 30px;
+
+    margin-top: 20px;
+
+    border: 1px solid #7B86CE;
+    border-radius: 30px;
+    font-size: 2.5vh;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px #7B86CE;
+}
+/* passaggio del mouse sul pulsante del download */
+.download-section button:hover{
+    background: #0C0E20;
+}
+
+/* responsive design per il mobile */
+@media (max-width: 600px) {
+    .download-section {
+        padding: 40px 20px;
+    }
+
+    .download-section h1 {
+        font-size: 28px;
+    }
+
+    .download-btn {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-family: inter-medium, sans-serif;
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 20px;
+    background-color: transparent; /* o un colore tipo #111 o #1a1a1a se vuoi scuro */
+    backdrop-filter: blur(8px); /* effetto blur elegante se sopra uno sfondo */
+    border-top: 2px solid rgba(255, 255, 255, 0.1); /* linea sottile sopra */
+}
+
+.footer p {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+
