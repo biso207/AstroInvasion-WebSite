@@ -26,10 +26,29 @@ body, html {
     background: #151A3B;
     color: white;
     font-family: inter-regular, sans-serif;
+    scroll-behavior: smooth; /* fluidità nello scroll della pagina */
+
+    /* testo non selezionabile ed evidenziabile */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 
     /* rimozione barra di scorrimento */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* IE 10+ */
+}
+
+/* proprietà generica delle immagini */
+img {
+    /* immagini non selezionabili nè scaricabili */
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
 
 /* rimozione barra di scorrimento */
@@ -100,6 +119,12 @@ body::-webkit-scrollbar {
     font-weight: normal;
 }
 
+.titles {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* spazio tra immagine e testo */
+}
+
 .gameInfo {
     font-family: inter-medium, "sans-serif";
     width: 100%;
@@ -140,6 +165,7 @@ body::-webkit-scrollbar {
 
     opacity: 0.8;
     margin-top: 20px;
+    margin-bottom: 40px;
     border: 2px solid rgba(255, 255, 255, 0.18);
 
     /* position & alignment */
@@ -172,6 +198,7 @@ body::-webkit-scrollbar {
     padding: 15px 30px;
 
     margin-top: 20px;
+    margin-bottom: 20px;
 
     border: 1px solid #7B86CE;
     border-radius: 30px;
