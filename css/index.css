@@ -24,7 +24,7 @@ body, html {
     width: 100%;
     height: 100%;
     background: #151A3B;
-    color: white;
+    color: #fff;
     font-family: inter-regular, sans-serif;
     scroll-behavior: smooth; /* fluidità nello scroll della pagina */
 
@@ -51,6 +51,19 @@ img {
     user-drag: none;
 }
 
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #ccc;
+}
+a:hover {
+    color: white;
+    transition: 0.2s;
+}
+
 /* rimozione barra di scorrimento */
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
@@ -58,7 +71,11 @@ body::-webkit-scrollbar {
 
 /* HEADER */
 .hero {
+    /* immagine di sfondo */
     background-image: url('../assets/img/bgsTitle/bgTitle1.jpg'); /* deve essere .jpg */
+    transition: opacity 1s ease, border-color 0.5s;
+    opacity: 1;
+
     background-size: cover;
     background-position: center;
     height: 92vh;
@@ -106,7 +123,6 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: inter-bold, sans-serif;
 }
 
 .text-dark {
@@ -120,6 +136,7 @@ body::-webkit-scrollbar {
 }
 
 .titles {
+    font-family: inter-bold, "sans-serif";
     display: flex;
     align-items: center;
     gap: 10px; /* spazio tra immagine e testo */
@@ -129,7 +146,6 @@ body::-webkit-scrollbar {
     font-family: inter-medium, "sans-serif";
     width: 100%;
     max-width: 700px;
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -137,7 +153,6 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     gap: 20px; /* spazio tra immagine e testo */
-    margin-bottom: 16px;
 }
 
 .feature-icon {
@@ -156,34 +171,55 @@ body::-webkit-scrollbar {
     display: inline; /* importante per evitare spazi tra gli span */
 }
 
-/* design sezione di download del gioco */
+/* sezione dei download del gioco */
 .download-section {
-    /* img */
-    background-color: rgba(48, 58, 121, 0.5);
+    /* position & alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+}
+
+/* design delle sezioni di download */
+.download {
+    /* bg */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px); /* supporto per Safari */
 
     opacity: 0.8;
     margin-top: 20px;
     margin-bottom: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.18);
+    border: 2px solid #bbbbbb;
 
-    /* position & alignment */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 80px;
+    padding: 10px 10px;
 
     /* dim */
-    width: 700px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     border-radius: 30px;
+
+    transition: transform 0.5s ease;
+    position: relative;
+}
+
+.download:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#standardEdi {
+    background-image: url('../assets/img/bgsDownloads/standard_edition.png');
+}
+#premiumEdi {
+    background-image: url('../assets/img/bgsDownloads/premium_edition.png');
+}
+#deluxeEdi {
+    background-image: url('../assets/img/bgsDownloads/deluxe_edition.png');
 }
 
 /* testo del download */
-.download-section h1 {
+.download h1 {
     font-family: inter-bold, sans-serif;
     font-size: 6vh;
     padding: 20px 0;
@@ -191,7 +227,7 @@ body::-webkit-scrollbar {
 }
 
 /* pulsante download */
-.download-section button {
+.download button {
     font-family: inter-medium, sans-serif;
     background: #151A3B;
     color: white;
@@ -200,16 +236,17 @@ body::-webkit-scrollbar {
     margin-top: 20px;
     margin-bottom: 20px;
 
-    border: 1px solid #7B86CE;
+    border: 1px solid #cccccc;
     border-radius: 30px;
     font-size: 2.5vh;
 
     cursor: pointer;
     transition: background-color 0.3s ease;
-    box-shadow: 0 0 5px #7B86CE;
+    box-shadow: 0 0 5px #cccccc;
 }
+
 /* passaggio del mouse sul pulsante del download */
-.download-section button:hover{
+.download button:hover{
     background: #0C0E20;
 }
 

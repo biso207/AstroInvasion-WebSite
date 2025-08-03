@@ -13,17 +13,15 @@
     </head>
     <body>
         <!--header-->
-        <div class="hero">
+        <div class="hero" id="hero">
             <!--testi in alto-->
             <div class="top-bar">
                 <div class="logo">ASTRO INVASION</div>
-                <div class="brand">BIGA Games</div>
+                <div class="brand"><b>BIGA Games</b></div>
             </div>
 
             <!--messaggio in basso-->
-            <div class="main-text">
-                An amazing journey is waiting for you
-            </div>
+            <div class="main-text" id="main-text"></div>
         </div>
 
         <!--main-->
@@ -80,19 +78,35 @@
             </div>
 
             <!-- sezione download del gioco -->
+            <!-- titolo -->
+            <div class="titles"><h2><span class="text-dark">The Journey Begins</span></h2></div>
             <div class="download-section">
-                <h1>The journey begins</h1>
-                <button>Download</button>
-                <p>Last Update — July 2025</p>
+                <div class="download" id="standardEdi">
+                    <h1>Standard</h1>
+                    <h3>The base game<br>for starter players</h3>
+                    <h1 style="color: #ecda18">Free</h1><br>
+                    <h3>Last Update — July 2025</h3>
+                </div>
+                <div class="download" id="premiumEdi">
+                    <h1>Premium</h1>
+                    <h3>Something more<br>for a better experience</h3>
+                    <h1 style="color: #ecda18">19,99 €</h1><br>
+                    <h3 style="color: #ed2a2a">Coming soon</h3>
+                </div>
+                <div class="download" id="deluxeEdi">
+                    <h1>Deluxe</h1>
+                    <h3>The best version<br>for the best explores</h3>
+                    <h1 style="color: #ecda18">49,99 €</h1><br>
+                    <h3 style="color: #ed2a2a">Coming soon</h3>
+                </div>
             </div>
 
             <!-- info sul salvataggio su cloud -->
             <!-- titolo -->
             <div class="titles">
-                <h2><span class="text-dark">Cloud Storage Infos</span></h2>
                 <img class="feature-icon" src="../assets/img/icons/game_infos/cloud.png" alt="cloudIcon">
+                <h2><span class="text-dark">Cloud Storage Infos</span></h2>
             </div>
-
             <div class="gameInfo" id="infoCloudStorage">
                 <!-- data securely encrypted -->
                 <h3 class="feature">
@@ -142,7 +156,7 @@
 
         <!--footer-->
         <footer class="footer">
-            <p>Developed and Designed by BIGA - Icons by <a href="https://icons8.com/icons" style="color: #ccc">
+            <p>Developed and Designed by BIGA - Icons by <a href="https://icons8.com/icons" target="_blank">
                 Icons8</a> - &copy; 2025</p>
         </footer>
     </body>
