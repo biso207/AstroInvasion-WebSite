@@ -1,8 +1,8 @@
 // array con le immagini
 const immagini = [
-    "url('../assets/img/bgsTitle/bgTitle1.jpg')",
-    "url('../assets/img/bgsTitle/bgTitle2.jpg')",
-    "url('../assets/img/bgsTitle/bgTitle3.jpg')"
+    "url('../../assets/img/bgsTitle/bgTitle1.jpg')",
+    "url('../../assets/img/bgsTitle/bgTitle2.jpg')",
+    "url('../../assets/img/bgsTitle/bgTitle3.jpg')"
 ];
 
 // array dei colori associati alle immagini
@@ -14,9 +14,9 @@ const colori = [
 
 // array dei testi
 const texts = [
-    "An amazing journey is waiting for you", // testo 1
-    "Explore the space and beyond", // testo 2
-    "The space is just waiting you" // testo 3
+    "Explore all my projects", // testo 1
+    "View my latest homeworks", // testo 2
+    "Take a look to stage projects" // testo 3
 ]
 
 let index = 0; // immagine iniziale
@@ -47,6 +47,36 @@ function avanti() {
 setInterval(() => {
     avanti();
 }, 10000);
+
+// scroll delle slide dx->sx e sx->dx
+const slider = document.querySelector('.project-section');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+});
+
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+});
+
+slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return; // se non clicchi, non fai nulla
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // moltiplica la velocità
+    slider.scrollLeft = scrollLeft - walk;
+});
 
 // Inizializza lo slider
 aggiornaSlider();
