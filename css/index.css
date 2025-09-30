@@ -1,7 +1,7 @@
 /* snippet per i font */
 @font-face {
     font-family: "inter-regular";
-    src: url('../../assets/fonts/Inter-Regular.fnt') format("truetype");
+    src: url('../../assets/fonts/Inter-Regular.ttf') format("truetype");
 }
 @font-face {
     font-family: "inter-medium";
@@ -123,10 +123,9 @@ body::-webkit-scrollbar {
 
 /* MAIN */
 .main {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin: 20px;
 }
 
 .text-dark {
@@ -210,7 +209,7 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 70px;
 
     overflow-x: auto;       /* abilita lo scroll orizzontale */
     scroll-behavior: smooth;
@@ -278,13 +277,40 @@ body::-webkit-scrollbar {
 
 /* sfondi dei project */
 #hmw1 {
-    background-image: url('../../assets/img/bgsProjects/standard_edition.png');
+    background-image: url('../../assets/img/bgsProjects/hmw1.png');
 }
 #hmw2 {
-    background-image: url('../../assets/img/bgsProjects/premium_edition.png');
+    background-image: url('../../assets/img/bgsProjects/hmw2.png');
 }
 #hmw3 {
-    background-image: url('../../assets/img/bgsProjects/deluxe_edition.png');
+    background-image: url('../../assets/img/bgsProjects/hmw3.png');
+}
+#hmw4 {
+    background-image: url('../../assets/img/bgsProjects/hmw4.png');
+}
+#pj1 {
+    background-image: url('../../assets/img/bgsProjects/pj1.png');
+}
+#pj2 {
+    background-image: url('../../assets/img/bgsProjects/pj2.png');
+}
+#pj3 {
+    background-image: url('../../assets/img/bgsProjects/pj3.png');
+}
+#pj4 {
+    background-image: url('../../assets/img/bgsProjects/pj4.png');
+}
+#pj5 {
+    background-image: url('../../assets/img/bgsProjects/pj5.png');
+}
+#pj6 {
+    background-image: url('../../assets/img/bgsProjects/pj6.png');
+}
+#stg1 {
+    background-image: url('../../assets/img/bgsProjects/stg1.png');
+}
+#stg2 {
+    background-image: url('../../assets/img/bgsProjects/stg2.png');
 }
 
 /* testo del project */

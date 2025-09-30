@@ -49,34 +49,37 @@ setInterval(() => {
 }, 10000);
 
 // scroll delle slide dx->sx e sx->dx
-const slider = document.querySelector('.project-section');
+const sliders = document.querySelectorAll('.project-section');
 
-let isDown = false;
-let startX;
-let scrollLeft;
 
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+sliders.forEach(slider => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // velocità
+        slider.scrollLeft = scrollLeft - walk;
+    });
 });
 
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-});
-
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return; // se non clicchi, non fai nulla
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // moltiplica la velocità
-    slider.scrollLeft = scrollLeft - walk;
-});
-
-// Inizializza lo slider
+// inizializza lo slider
 aggiornaSlider();
