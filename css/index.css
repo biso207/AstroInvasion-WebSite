@@ -82,7 +82,8 @@ body::-webkit-scrollbar {
     opacity: 1;
 
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat; /*nessuna duplicazione dell'immagine*/
+    background-position: center center;
     height: 92vh;
     position: relative;
     color: white;
@@ -115,7 +116,7 @@ body::-webkit-scrollbar {
 /* testo centrale descrittivo */
 .main-text {
     font-family: inter-bold, sans-serif;
-    font-size: 5rem;
+    font-size: clamp(1.8rem, 6vw, 4rem);
     max-width: 800px;
     padding-bottom: 40px;
     line-height: 1.2;
@@ -162,7 +163,7 @@ body::-webkit-scrollbar {
     justify-content: left;
 
     gap: 10px; /* spazio tra immagine e testo */
-    margin-top: -80px;
+    margin-top: -60px;
     color: #ccc;
 }
 
@@ -196,25 +197,20 @@ body::-webkit-scrollbar {
 
 .feature-text {
     color: #ccc;
-    font-size: 3vh;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     margin: 10px;
     font-family: inter-medium, sans-serif;
     line-height: 1.5;
     display: inline; /* importante per evitare spazi tra gli span */
 }
 
-/* sezione dei project del gioco */
+/* sezione project responsive */
 .project-section {
-    /* position & alignment */
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 70px;
-
-    overflow-x: auto;       /* abilita lo scroll orizzontale */
-    scroll-behavior: smooth;
-    cursor: grab;           /* effetto mano */
+    gap: clamp(15px, 5%, 40px);
     padding: 20px;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 /* design delle sezioni di project */
@@ -224,26 +220,25 @@ body::-webkit-scrollbar {
     -webkit-backdrop-filter: blur(20px); /* supporto per Safari */
 
     opacity: 0.8;
-    margin-top: 20px;
-    margin-bottom: 40px;
     border: 2px solid #bbbbbb;
 
-    /* dim */
-    width: 350px;
-    height: 350px;
-    border-radius: 30px;
-    flex: 0 0 auto; /* impedisce che la slide si auto ridimensioni */
+    /* dimensioni */
+    width: clamp(260px, 28vw, 350px);
+    aspect-ratio: 1 / 1; /* mantiene quadrato, ma si ridimensiona in proporzione */
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 15px;
 
-    transition: transform 0.5s ease;
-    position: relative;
-
-    /* posizionamento testi */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* distribuisce sopra e sotto */
-    align-items: center;            /* centra orizzontalmente */
-    text-align: center;             /* centra il testo */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    transition: transform 0.5s ease;
 }
+
 
 .project:hover {
     transform: scale(1.05);
@@ -289,10 +284,10 @@ body::-webkit-scrollbar {
     background-image: url('../../assets/img/bgsProjects/hmw4.png');
 }
 #hmw5 {
-    background-image: url('../../assets/img/bgsProjects/hmw4.png');
+    background-image: url('../../assets/img/bgsProjects/hmw5.png');
 }
 #hmw6 {
-    background-image: url('../../assets/img/bgsProjects/hmw4.png');
+    background-image: url('../../assets/img/bgsProjects/hmw6.png');
 }
 /*progetti personali*/
 #pj1 {
@@ -324,8 +319,11 @@ body::-webkit-scrollbar {
 /* testo del project */
 .project h1 {
     font-family: inter-bold, sans-serif;
-    font-size: 6vh;
-    padding: 20px 0;
+    font-size: clamp(1rem, 2.5vw, 2rem); /* più flessibile su zoom alto */
+    word-break: break-word; /* evita che il testo esca dal box */
+    line-height: 1.2;
+
+    padding: 10px 0;
     color: white;
 }
 
@@ -334,14 +332,13 @@ body::-webkit-scrollbar {
     font-family: inter-medium, sans-serif;
     background: #151A3B;
     color: white;
-    padding: 15px 30px;
+    padding: 0.8rem 1.5rem;
 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 1rem 0;
 
     border: 1px solid #cccccc;
     border-radius: 30px;
-    font-size: 2.5vh;
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
 
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -353,19 +350,46 @@ body::-webkit-scrollbar {
     background: #0C0E20;
 }
 
-/* responsive design per il mobile */
+/* responsive design mobile */
 @media (max-width: 600px) {
     .project-section {
-        padding: 40px 20px;
+        flex-wrap: wrap; /* invece che scroll orizzontale forzato */
+        justify-content: center;
     }
 
-    .project-section h1 {
-        font-size: 28px;
+    .project {
+        width: 90%;
+        height: auto;
     }
 
-    .project-btn {
-        font-size: 16px;
-        padding: 12px 30px;
+    .project h1 {
+        font-size: 1.5rem;
+    }
+
+    .project button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    body {
+        background-size: contain; /* L'immagine entra nel viewport senza ritagli */
+        background-position: top center;
+    }
+}
+
+/* responsive design tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .main-text {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    .project {
+        width: clamp(220px, 40vw, 300px);
+        height: auto; /* lascia altezza dinamica */
+        padding: clamp(10px, 2%, 20px);
+    }
+
+    body {
+        background-size: cover; /* Riempie lo schermo */
     }
 }
 
