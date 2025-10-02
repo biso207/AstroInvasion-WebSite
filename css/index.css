@@ -275,7 +275,7 @@ body::-webkit-scrollbar {
     margin-top: -50px;
 }
 
-/* sfondi dei project */
+/*progetti compiti scuola*/
 #hmw1 {
     background-image: url('../../assets/img/bgsProjects/hmw1.png');
 }
@@ -288,6 +288,13 @@ body::-webkit-scrollbar {
 #hmw4 {
     background-image: url('../../assets/img/bgsProjects/hmw4.png');
 }
+#hmw5 {
+    background-image: url('../../assets/img/bgsProjects/hmw4.png');
+}
+#hmw6 {
+    background-image: url('../../assets/img/bgsProjects/hmw4.png');
+}
+/*progetti personali*/
 #pj1 {
     background-image: url('../../assets/img/bgsProjects/pj1.png');
 }
@@ -306,6 +313,7 @@ body::-webkit-scrollbar {
 #pj6 {
     background-image: url('../../assets/img/bgsProjects/pj6.png');
 }
+/*progetti stage*/
 #stg1 {
     background-image: url('../../assets/img/bgsProjects/stg1.png');
 }
