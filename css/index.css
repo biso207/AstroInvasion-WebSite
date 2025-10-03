@@ -157,13 +157,7 @@ body::-webkit-scrollbar {
 }
 
 .subPjTitle {
-    font-family: inter-medium, "sans-serif";
-    display: flex;
-    align-items: center;
-    justify-content: left;
-
     gap: 10px; /* spazio tra immagine e testo */
-    margin-top: -60px;
     color: #ccc;
 }
 
@@ -267,7 +261,6 @@ body::-webkit-scrollbar {
 .tech {
     font-family: inter-medium, sans-serif;
     color: #ccc;
-    margin-top: -50px;
 }
 
 /*progetti compiti scuola*/
@@ -289,6 +282,10 @@ body::-webkit-scrollbar {
 #hmw6 {
     background-image: url('../../assets/img/bgsProjects/hmw6.png');
 }
+#hmw7 {
+    background-image: url('../../assets/img/bgsProjects/hmw7.png');
+}
+
 /*progetti personali*/
 #pj1 {
     background-image: url('../../assets/img/bgsProjects/pj1.png');
@@ -308,6 +305,7 @@ body::-webkit-scrollbar {
 #pj6 {
     background-image: url('../../assets/img/bgsProjects/pj6.png');
 }
+
 /*progetti stage*/
 #stg1 {
     background-image: url('../../assets/img/bgsProjects/stg1.png');
@@ -378,7 +376,7 @@ body::-webkit-scrollbar {
 }
 
 /* responsive design tablet */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 601px) {
     .main-text {
         font-size: clamp(2rem, 6vw, 3rem);
     }

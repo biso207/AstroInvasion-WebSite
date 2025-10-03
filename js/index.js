@@ -83,3 +83,30 @@ sliders.forEach(slider => {
 
 // inizializza lo slider
 aggiornaSlider();
+
+// check dispositivo download
+function sistemaOperativo() {
+    const ua = navigator.userAgent;
+
+    if (/Windows NT|Win32|Win64/i.test(ua)) return "Windows";
+    if (/Macintosh|Mac OS X/i.test(ua)) return "Mac";
+    if (/Linux/i.test(ua)) return "Linux";
+    if (/Android/i.test(ua)) return "Android";
+    if (/iPhone|iPad|iPod/i.test(ua)) return "iOS";
+    return "Altro";
+}
+
+document.querySelectorAll(".projectLink").forEach(function(link) {
+    link.addEventListener("click", function(event) {
+        const os = sistemaOperativo();
+
+        // Se NON è Windows
+        if (os !== "Mac") {
+            // se è un link con download, blocco il download
+            if (link.hasAttribute("download")) {
+                event.preventDefault(); // blocca il link
+                alert("Il download è disponibile solo su Windows");
+            }
+        }
+    });
+});
