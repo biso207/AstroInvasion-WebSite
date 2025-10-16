@@ -12,17 +12,11 @@ const colori = [
     "#FFFFFF"   // bianco img3
 ];
 
-// array dei testi
-const texts = [
-    "Explore all my projects", // testo 1
-    "View my latest homeworks", // testo 2
-    "Take a look to stage projects" // testo 3
-]
-
 let index = 0; // immagine iniziale
 
 const contenitore = document.getElementById("hero");
-const testo = document.getElementById("main-text");
+document.getElementById("main-text").innerHTML = "Explore all my projects";
+contenitore.style.color = "#FFFFFF";
 
 // funzione per aggiornare immagine e colore
 function aggiornaSlider() {
@@ -31,8 +25,7 @@ function aggiornaSlider() {
     // Dopo 500ms cambia immagine e colore, poi riappare
     setTimeout(() => {
         contenitore.style.backgroundImage = immagini[index];
-        contenitore.style.color = colori[index];
-        testo.innerHTML = texts[index];
+        //contenitore.style.color = colori[index];
         contenitore.style.opacity = 1;
     }, 400);
 }
@@ -101,7 +94,7 @@ document.querySelectorAll(".projectLink").forEach(function(link) {
         const os = sistemaOperativo();
 
         // Se NON è Windows
-        if (os !== "Mac") {
+        if (os !== "Windows") {
             // se è un link con download, blocco il download
             if (link.hasAttribute("download")) {
                 event.preventDefault(); // blocca il link
@@ -110,3 +103,8 @@ document.querySelectorAll(".projectLink").forEach(function(link) {
         }
     });
 });
+
+// funzione per notificare che un elemento non è presente
+function notAvailable() {
+    alert("Element not available");
+}
